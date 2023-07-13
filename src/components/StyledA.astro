@@ -1,0 +1,12 @@
+---
+// <a> with primary-colored text and underline
+export interface Props {
+    href: string;
+    className?: string;
+    target?: string;
+}
+
+const { href, className, target } = Astro.props;
+---
+
+<a {href} class:list={["text-primary underline", className]} {target}><slot/></a>
