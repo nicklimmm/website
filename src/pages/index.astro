@@ -41,6 +41,36 @@ const workExperience = [
     tags: ["React", "Flow", "Hack", "GraphQL", "Relay", "Mercurial", "Hive"]
   }
 ]
+
+const projects = [
+  {
+    title: "Rust – Open Source Project",
+    date: "May 2023 - Present",
+    points: [
+      "Contributed to improving compiler error diagnostics",
+      "Migrated documentation generator to Askama (template rendering engine)",
+    ],
+    tags: ["Rust", "Askama", "GitHub"],
+  },
+  {
+    title: "EverydayFit – Academic Project",
+    date: "September - November 2021",
+    points: [
+      "Led the team in frontend development throughout the SDLC with Agile methodology",
+      "Developed UI and push notifications in mobile for displaying weather forecast, and weather-related activities using React Native",
+    ],
+    tags: ["React Native", "Expo", "Express", "JavaScript", "MongoDB", "GitHub"],
+  },
+  {
+    title: "SiFinance – Personal Project",
+    date: "May - July 2021",
+    points: [
+      "Developed a personal finance mobile app using React Native for wealth management, with visualizations and expense tracking",
+      "Deployed to Google Play Store and downloaded by more than 60 users in 3 days",
+    ],
+    tags: ["React Native", "Expo", "JavaScript", "GitHub"],
+  },
+]
 ---
 
 <Layout title="Nicky Lim's Personal Website">
@@ -78,12 +108,12 @@ const workExperience = [
       <div class="lg:sticky lg:top-0 lg:h-screen lg:col-span-2 flex items-center justify-center">
         <h1 class="text-4xl font-bold text-center pt-6 mb-6">Work Experience</h1>
       </div>
-      <div class="lg:col-span-3 flex flex-col divide-y">
+      <div class="lg:col-span-3 flex flex-col divide-y lg:py-12">
         {workExperience.map(({ title, company, date, tags, points }) => (
           <div class="rounded-md px-2 py-6 text-gray-650">
             <p class="text-sm mb-1 italic">{date}</p>
-            <p class="font-semibold">{title}</p>
-            <p class="font-semibold">{company}</p>
+            <p class="font-semibold text-lg">{title}</p>
+            <p class="font-semibold text-lg">{company}</p>
             <ul class="list-disc my-2">
               {points.map((point) => (
                 <li>{point}</li>
@@ -98,6 +128,28 @@ const workExperience = [
         ))}
       </div>
     </section>
-    <div></div>
+    <section class="lg:grid lg:grid-cols-5 lg:gap-x-4 min-h-screen mt-12">
+      <div class="lg:sticky lg:top-0 lg:h-screen lg:col-span-2 flex items-center justify-center lg:order-2">
+        <h1 class="text-4xl font-bold text-center pt-6 mb-6">Projects</h1>
+      </div>
+      <div class="lg:col-span-3 flex flex-col divide-y lg:py-12 lg:order-1">
+        {projects.map(({ title, date, tags, points }) => (
+          <div class="rounded-md px-2 py-6 text-gray-650">
+            <p class="text-sm mb-1 italic">{date}</p>
+            <p class="font-semibold text-lg">{title}</p>
+            <ul class="list-disc my-2">
+              {points.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <Chip className="text-xs inline">{tag}</Chip>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   </main>
 </Layout>
