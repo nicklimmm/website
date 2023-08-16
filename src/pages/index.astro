@@ -92,6 +92,13 @@ const education = [
     ],
   },
 ]
+
+const achievements = [
+  "NTUSU Union Gold Award and Long Service Silver Award AY21/22 ",
+  "SCSE Best Tutor Award Semester 1 AY21/22",
+  "Deep Learning Specialization (DeepLearning.AI) and Machine Learning (Stanford)",
+  "Math Olympiad Medalist (2x Gold, 1x Silver, 3x Bronze) 2016-2020 ",
+]
 ---
 
 <Layout title="Nicky Lim's Personal Website">
@@ -125,7 +132,7 @@ const education = [
         My interests are in <Emp>backend development</Emp>, <Emp>distributed systems</Emp>, and <Emp>programming languages</Emp>. Other than programming, I do enjoy sports and playing musical instruments.
       </p>
     </section>
-    <section class="lg:grid lg:grid-cols-5 lg:gap-x-4 min-h-screen">
+    <section class="lg:grid lg:grid-cols-5 lg:gap-x-4 min-h-screen mt-8">
       <div class="lg:sticky lg:top-0 lg:h-screen lg:col-span-2 flex items-center justify-center">
         <h1 class="text-4xl font-bold text-center pt-6 mb-6">Work Experience</h1>
       </div>
@@ -133,8 +140,11 @@ const education = [
         {workExperience.map(({ title, company, date, tags, points }) => (
           <div class="rounded-md px-2 py-6 text-gray-650">
             <p class="text-sm mb-1 italic">{date}</p>
-            <p class="font-semibold text-lg">{title}</p>
-            <p class="font-semibold text-lg">{company}</p>
+            <p class="font-semibold text-xl">{title}</p>
+            <div>
+              <i class="fa-solid fa-location-dot text-xl text-red-600"></i>
+              <p class="font-semibold text-xl ml-1 inline">{company}</p>
+            </div>
             <ul class="list-disc my-2">
               {points.map((point) => (
                 <li>{point}</li>
@@ -150,15 +160,18 @@ const education = [
       </div>
     </section>
     <section class="lg:grid lg:grid-cols-5 lg:gap-x-4 min-h-screen mt-12">
-      <div class="lg:sticky lg:top-0 lg:h-screen lg:col-span-2 flex items-center justify-center lg:order-2">
+      <div class="lg:sticky lg:top-0 lg:h-screen lg:col-span-2 flex items-center justify-center">
         <h1 class="text-4xl font-bold text-center pt-6 mb-6">Education</h1>
       </div>
       <div class="lg:col-span-3 flex flex-col divide-y lg:py-12 lg:order-1 justify-center">
         {education.map(({ institution, title, date, points }) => (
           <div class="rounded-md px-2 py-6 text-gray-650">
             <p class="text-sm mb-1 italic">{date}</p>
-            <p class="font-semibold text-lg">{institution}</p>
-            <p class="font-semibold text-lg">{title}</p>
+            <p class="font-semibold text-xl">{title}</p>
+            <div>
+              <i class="fa-solid fa-location-dot text-xl text-red-600"></i>
+              <p class="font-semibold text-xl ml-1 inline">{institution}</p>
+            </div>
             <ul class="list-disc my-2">
               {points.map((point) => (
                 <li>{point}</li>
@@ -176,7 +189,7 @@ const education = [
         {projects.map(({ title, date, tags, points }) => (
           <div class="rounded-md px-2 py-6 text-gray-650">
             <p class="text-sm mb-1 italic">{date}</p>
-            <p class="font-semibold text-lg">{title}</p>
+            <p class="font-semibold text-xl">{title}</p>
             <ul class="list-disc my-2">
               {points.map((point) => (
                 <li>{point}</li>
@@ -190,6 +203,16 @@ const education = [
           </div>
         ))}
       </div>
+    </section>
+    <section class="flex flex-col justify-center min-h-screen">
+      <div class="flex items-center justify-center">
+        <h1 class="text-4xl font-bold text-center pt-6 mb-4">Achievements</h1>
+      </div>
+      <ul class="mx-auto list-disc my-1">
+        {achievements.map((achievement) => (
+          <li class="mb-1">{achievement}</li>
+        ))}
+      </ul>
     </section>
   </main>
 </Layout>
