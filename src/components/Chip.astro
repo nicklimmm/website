@@ -1,0 +1,8 @@
+---
+export interface Props {
+    readonly className?: string;
+}
+
+const { className } = Astro.props;
+---
+<span class:list={ ["bg-[#BDCFDE] px-3.5 py-1.5 rounded-full", className] }><slot/></span>

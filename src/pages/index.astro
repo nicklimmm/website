@@ -1,7 +1,46 @@
 ---
+import Chip from "../components/Chip.astro";
 import Emp from "../components/Emp.astro";
 import StyledA from "../components/StyledA.astro";
 import Layout from "../layouts/Layout.astro";
+
+const workExperience = [
+  {
+    title: "Summer Analyst – JSI SDLC",
+    company: "Goldman Sachs",
+    date: "May - July 2023",
+    points: [
+      "Migrated a legacy, custom-built VCS into GitLab for SDLC standardization across the firm",
+      "Engineered a solution to create a read-replica of the monorepo of 12+ years with 316k+ commits, while maintaining data integrity",
+      "Designed a financial AI assistant plugin for Marquee (digital platform for institutional clients of Goldman Sachs) in an internal hackathon"
+    ],
+    tags: ["Java", "Slang", "SecDB", "Git", "GitLab", "NextJS", "GPT API", "Tailwind"]
+  },
+  {
+    title: "Backend Engineer Intern – Actor Review Tooling",
+    company: "TikTok",
+    date: "December 2022 - May 2023",
+    points: [
+      "Reduced 200 human-review hours and 4.2K moderation tasks per week by implementing a real-time task abandoner",
+      "Streamlined database accesses and improved maintainability by integrating data services across multiple repositories in the pipeline",
+      "Enhanced data schema consistency and integrity by implementing a robust validation layer",
+      "Optimized human reviews and mitigated content risk on TikTok by deploying a task ranking model pipeline based on LGBM",
+    ],
+    tags: ["Go", "MongoDB", "Grafana", "KiteX", "Apache Thrift", "GitLab", "Kafka", "RocketMQ", "Hive", "Python", "PySpark", "PyCaret", "Pandas", "FaaS"]
+  },
+  {
+    title: "Software Engineer Intern – Human Review",
+    company: "Meta",
+    date: "May - August 2022",
+    points: [
+      "Developed a self-served human review training workflow on an internal platform, reducing moderator onboarding and training time",
+      "Increased labeling use cases from 22% to 71% and built dashboards for monitoring new features",
+      "Improved UX on the labeling platform by processing long-running tasks asynchronously",
+      "Collaborated with Cross-Functional Teams (Product Designers and Engineers) from Singapore and US through regular and ad-hoc meetings",
+    ],
+    tags: ["React", "Flow", "Hack", "GraphQL", "Relay", "Mercurial", "Hive"]
+  }
+]
 ---
 
 <Layout title="Nicky Lim's Personal Website">
@@ -23,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
         </a>
       </div>
     </section>
-    <section class="h-screen flex flex-col justify-center items-center">
+    <section class="h-screen flex flex-col justify-center items-center px-8 md:px-16 lg:px-24">
       <h1 class="text-4xl font-bold text-center mb-6">About Me</h1>
       <p class="text-lg mb-6">
         I'm in my final year of studying Computer Science at Nanyang Technological University, Singapore.
@@ -31,9 +70,34 @@ import Layout from "../layouts/Layout.astro";
       </p>
       <p class="text-lg">
         I had software engineer internships in the domains of business integrity and SDLC at technology and investment banking companies.
-        In my spare time, I also contribute to open source projects, mainly around the <StyledA href="https://www.rust-lang.org/" target="_blank">Rust</StyledA> compiler.
+        In my spare time, I also contribute to open source projects, mainly around the <StyledA href="https://www.rust-lang.org/" target="_blank">Rust</StyledA> ecosystem.
         My interests are in <Emp>backend development</Emp>, <Emp>distributed systems</Emp>, and <Emp>programming languages</Emp>. Other than programming, I do enjoy sports and playing musical instruments.
       </p>
     </section>
+    <section class="lg:grid lg:grid-cols-5 lg:gap-x-4 min-h-screen">
+      <div class="lg:sticky lg:top-0 lg:h-screen lg:col-span-2 flex items-center justify-center">
+        <h1 class="text-4xl font-bold text-center pt-6 mb-6">Work Experience</h1>
+      </div>
+      <div class="lg:col-span-3 flex flex-col gap-y-6">
+        {workExperience.map(({ title, company, date, tags, points }) => (
+          <div class="hover:bg-slate-100 hover:shadow-sm rounded-md p-6 text-gray-650">
+            <p class="text-sm mb-1">{date}</p>
+            <p class="font-semibold">{title}</p>
+            <p class="font-semibold">{company}</p>
+            <ul class="list-disc my-2">
+              {points.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <Chip className="text-xs inline">{tag}</Chip>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    <div></div>
   </main>
 </Layout>
