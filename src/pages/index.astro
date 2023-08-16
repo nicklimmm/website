@@ -71,6 +71,27 @@ const projects = [
     tags: ["React Native", "Expo", "JavaScript", "GitHub"],
   },
 ]
+
+const education = [
+  {
+    institution: "Nanyang Technological University, Singapore",
+    title: "Bachelor of Engineering (Computer Science)",
+    date: "August 2020 - May 2024 (Expected)",
+    points: [
+      "Expected Honours (Highest Distinction)",
+      "Achieved Distinction in Data Structures and Algorithms, Algorithm Design and Analysis",
+      "Relevant courses: Database System Principles, Operating Systems, Advanced Software Engineering, Machine Learning, Advanced Algorithms, Advanced Computer Architecture"
+    ],
+  },
+  {
+    institution: "National University of Singapore, Singapore",
+    title: "Singapore Universities Student Exchange Programme (SUSEP)",
+    date: "January - May 2022",
+    points: [
+      "Courses taken: Computer Networks",
+    ],
+  },
+]
 ---
 
 <Layout title="Nicky Lim's Personal Website">
@@ -130,9 +151,28 @@ const projects = [
     </section>
     <section class="lg:grid lg:grid-cols-5 lg:gap-x-4 min-h-screen mt-12">
       <div class="lg:sticky lg:top-0 lg:h-screen lg:col-span-2 flex items-center justify-center lg:order-2">
+        <h1 class="text-4xl font-bold text-center pt-6 mb-6">Education</h1>
+      </div>
+      <div class="lg:col-span-3 flex flex-col divide-y lg:py-12 lg:order-1 justify-center">
+        {education.map(({ institution, title, date, points }) => (
+          <div class="rounded-md px-2 py-6 text-gray-650">
+            <p class="text-sm mb-1 italic">{date}</p>
+            <p class="font-semibold text-lg">{institution}</p>
+            <p class="font-semibold text-lg">{title}</p>
+            <ul class="list-disc my-2">
+              {points.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section class="lg:grid lg:grid-cols-5 lg:gap-x-4 min-h-screen mt-12">
+      <div class="lg:sticky lg:top-0 lg:h-screen lg:col-span-2 flex items-center justify-center">
         <h1 class="text-4xl font-bold text-center pt-6 mb-6">Projects</h1>
       </div>
-      <div class="lg:col-span-3 flex flex-col divide-y lg:py-12 lg:order-1">
+      <div class="lg:col-span-3 flex flex-col divide-y lg:py-12">
         {projects.map(({ title, date, tags, points }) => (
           <div class="rounded-md px-2 py-6 text-gray-650">
             <p class="text-sm mb-1 italic">{date}</p>
