@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+const year = new Date().getFullYear();
 ---
 
 <!DOCTYPE html>
@@ -24,5 +25,9 @@ const { title } = Astro.props;
 	</head>
 	<body class="px-10 md:px-28 lg:px-40 bg-gray-50">
 		<slot />
+		<footer class="flex flex-col justify-center items-center py-4">
+			<p class="italic">Made with Astro ❤️</p>
+			<p class="italic">&copy; {year} Nicky Lim</p>
+		</footer>
 	</body>
 </html>
