@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 
 const workExperience = [
   {
-    title: "Summer Analyst – JSI SDLC",
+    title: "Summer Analyst – Java-Slang Integration SDLC",
     company: "Goldman Sachs",
     date: "May - July 2023",
     points: [
@@ -44,13 +44,31 @@ const workExperience = [
 
 const projects = [
   {
-    title: "Rust – Open Source Project",
+    title: "Gleam Compiler – Open Source Project",
+    date: "April 2024 - Present",
+    points: [
+      "Improved developer experience by enabling more LSP features",
+      "Enhanced the extensibility of adding LSP code actions",
+    ],
+    tags: ["Rust", "Gleam", "LSP", "GitHub"],
+  },
+  {
+    title: "Rust Compiler – Open Source Project",
     date: "May 2023 - Present",
     points: [
       "Contributed to improving compiler error diagnostics",
       "Migrated documentation generator to Askama (template rendering engine)",
     ],
     tags: ["Rust", "Askama", "GitHub"],
+  },
+  {
+    title: "Vortex-SegFormer – Final Year Project",
+    date: "August 2023 - May 2024",
+    points: [
+      "Improved up to 17% recall, 11% F1, and 17% IoU against state-of-the-art vortex detection models",
+      "Removed reliance on patch sampling without sacrificing inference performance",
+    ],
+    tags: ["Python", "Pytorch", "Transformers", "Computer Vision", "Fluid Dynamics"],
   },
   {
     title: "EverydayFit – Academic Project",
@@ -76,25 +94,26 @@ const education = [
   {
     institution: "Nanyang Technological University, Singapore",
     title: "Bachelor of Engineering (Computer Science)",
-    date: "August 2020 - May 2024 (Expected)",
+    date: "August 2020 - June 2024",
     points: [
-      "Expected Honours (Highest Distinction)",
+      "Graduated with Honours (Highest Distinction)",
+      "Specialized in Data Science and Analytics, and High Performance Computing",
       "Achieved Distinction in Data Structures and Algorithms, Algorithm Design and Analysis",
-      "Relevant courses: Database System Principles, Operating Systems, Advanced Software Engineering, Machine Learning, Advanced Algorithms, Advanced Computer Architecture"
+      "Relevant courses: Distributed Systems, Compiler Techniques, Database System Principles, Advanced Software Engineering, Machine Learning, Advanced Algorithms",
     ],
   },
-  {
-    institution: "National University of Singapore, Singapore",
-    title: "Singapore Universities Student Exchange Programme (SUSEP)",
-    date: "January - May 2022",
-    points: [
-      "Courses taken: Computer Networks",
-    ],
-  },
+  // {
+  //   institution: "National University of Singapore, Singapore",
+  //   title: "Singapore Universities Student Exchange Programme (SUSEP)",
+  //   date: "January - May 2022",
+  //   points: [
+  //     "Courses taken: Computer Networks",
+  //   ],
+  // },
 ]
 
 const achievements = [
-  "NTUSU Union Gold Award and Long Service Silver Award AY21/22 ",
+  "NTUSU Union Gold Award and Long Service Silver Award AY21/22",
   "SCSE Best Tutor Award Semester 1 AY21/22",
   "Deep Learning Specialization (DeepLearning.AI) and Machine Learning (Stanford)",
   "Math Olympiad Medalist (2x Gold, 1x Silver, 3x Bronze) 2016-2020 ",
@@ -123,12 +142,12 @@ const achievements = [
     <section class="min-h-screen flex flex-col justify-center items-center sm:px-8 md:px-16 lg:px-24">
       <h1 class="text-4xl font-bold text-center mb-6">About Me</h1>
       <p class="text-lg mb-6">
-        I'm in my final year of studying Computer Science at Nanyang Technological University, Singapore.
+        I'm a Software Engineer, Computer Science graduate from Nanyang Technological University, Singapore.
         Passionate in <Emp>building impactful software products</Emp> and <Emp>imparting knowledge</Emp> to others.
       </p>
       <p class="text-lg">
-        I had software engineer internships in the domains of business integrity and SDLC at technology and investment banking companies.
-        In my spare time, I also contribute to open source projects, mainly around the <StyledA href="https://www.rust-lang.org/" target="_blank">Rust</StyledA> ecosystem.
+        I had multiple experience in the domains of business integrity and SDLC at technology and investment banking companies.
+        In my spare time, I also contribute to open source projects, mainly around <StyledA href="https://www.rust-lang.org/" target="_blank">Rust</StyledA> and <StyledA href="https://gleam.run/" target="_blank">Gleam</StyledA> ecosystems.
         My interests are in <Emp>backend development</Emp>, <Emp>distributed systems</Emp>, and <Emp>programming languages</Emp>. Other than programming, I do enjoy sports and playing musical instruments.
       </p>
     </section>
@@ -142,8 +161,8 @@ const achievements = [
             <p class="text-sm mb-1 italic">{date}</p>
             <p class="font-semibold text-xl">{title}</p>
             <div>
-              <i class="fa-solid fa-location-dot text-xl text-red-600"></i>
-              <p class="font-semibold text-xl ml-1 inline">{company}</p>
+              <i class="fa-solid fa-location-dot text-lg text-red-600"></i>
+              <p class="font-semibold text-lg ml-1 inline">{company}</p>
             </div>
             <ul class="list-disc my-2">
               {points.map((point) => (
@@ -169,8 +188,8 @@ const achievements = [
             <p class="text-sm mb-1 italic">{date}</p>
             <p class="font-semibold text-xl">{title}</p>
             <div>
-              <i class="fa-solid fa-location-dot text-xl text-red-600"></i>
-              <p class="font-semibold text-xl ml-1 inline">{institution}</p>
+              <i class="fa-solid fa-location-dot text-lg text-red-600"></i>
+              <p class="font-semibold text-lg ml-1 inline">{institution}</p>
             </div>
             <ul class="list-disc my-2">
               {points.map((point) => (
